@@ -1,12 +1,10 @@
-# 🏭 Simulación IoT: Control y Monitoreo de Contenedor de Jarabe Farmacéutico
+# Simulación IoT: Control y Monitoreo de Contenedor de Jarabe Farmacéutico
 
 Este repositorio contiene la arquitectura, código y configuración para un sistema de automatización inteligente aplicado a un contenedor de jarabe farmacéutico. 
 
 El proyecto simula el control de variables físicas, gestión de actuadores mediante **AWS Device Shadow**, registro de métricas en **DynamoDB**, alertas por **SNS**, y telemetría visualizada en un Dashboard de **Node-RED**, usando una **ESP32 simulada en Wokwi** como el borde (Edge).
 
-## 📐 Arquitectura del Sistema
-
-El proyecto implementa una arquitectura IoT robusta y bidireccional:
+## Arquitectura del Sistema
 
 1. **Hardware / Edge (Wokwi - ESP32 con MicroPython):** Simula los sensores del contenedor y controla los actuadores (LEDs indicadores, Buzzer, relés virtuales) reaccionando al estado reportado (`reported`) del Device Shadow y a las reglas locales.
 2. **Bróker y Lógica en la Nube (AWS IoT Core):**
@@ -16,7 +14,7 @@ El proyecto implementa una arquitectura IoT robusta y bidireccional:
 3. **Almacenamiento y Notificaciones (AWS DynamoDB & SNS):**
    * **DynamoDB:** Guarda un registro histórico de todos los eventos de cambio de estado.
    * **SNS:** Envía correos electrónicos inmediatos al personal cuando se activa una emergencia.
-4. **Controlador, UI y Simulación Física (Node-RED):** Inyecta la simulación de inercias físicas (gravedad, termodinámica), gestiona el panel de control del operador y fuerza los modos de falla.
+4. **Controlador, UI y Simulación Física (Node-RED):** Injecta variables físicas para la simulación
 
 ---
 
