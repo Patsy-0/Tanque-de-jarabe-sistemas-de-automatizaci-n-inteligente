@@ -1,0 +1,1807 @@
+[
+    {
+        "id": "34f36098cec742a6",
+        "type": "tab",
+        "label": "Proyecto_Final_Jarabe",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fddba8dbdd530b84",
+        "type": "inject",
+        "z": "34f36098cec742a6",
+        "name": "Tick (cada 5s)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.5,
+        "topic": "equipo1/jarabe/tambo_01/tick",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 40,
+        "wires": [
+            [
+                "5b0138b27fc98ed7"
+            ]
+        ]
+    },
+    {
+        "id": "5b0138b27fc98ed7",
+        "type": "mqtt out",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2192 Publish (tick + acciones)",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bb8594a0dcbcf412",
+        "x": 620,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "db8676fa48187bac",
+        "type": "ui-button",
+        "z": "34f36098cec742a6",
+        "group": "2d14b8bbc6b01e77",
+        "name": "Reset simulaci\u00f3n",
+        "label": "\ud83d\udd04 RESET",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "Restaura el tambo a estado nominal",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-refresh",
+        "iconPosition": "right",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "equipo1/jarabe/tambo_01/action/reset",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "5b0138b27fc98ed7"
+            ]
+        ]
+    },
+    {
+        "id": "b7ec98bea2e3d7bd",
+        "type": "ui-button",
+        "z": "34f36098cec742a6",
+        "group": "2d14b8bbc6b01e77",
+        "name": "Aumento de volumen",
+        "label": "Aumento de Volumen",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "Fuerza el nivel a 92% para probar evento alto nivel",
+        "color": "",
+        "bgcolor": "#f44336",
+        "className": "",
+        "icon": "",
+        "iconPosition": "right",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "equipo1/jarabe/tambo_01/action/aumento_volumen",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "5b0138b27fc98ed7"
+            ]
+        ]
+    },
+    {
+        "id": "843cae36c52989f3",
+        "type": "ui-button",
+        "z": "34f36098cec742a6",
+        "group": "2d14b8bbc6b01e77",
+        "name": "Disminucion de Concentraci\u00f3n",
+        "label": "Disminuci\u00f3n de Concentraci\u00f3n",
+        "order": 7,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "Fuerza la concentraci\u00f3n a bajar gradualmente",
+        "color": "",
+        "bgcolor": "#2196f3",
+        "className": "",
+        "icon": "",
+        "iconPosition": "right",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "equipo1/jarabe/tambo_01/action/disminucion_concentracion",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "5b0138b27fc98ed7"
+            ]
+        ]
+    },
+    {
+        "id": "fa88e172649c7f77",
+        "type": "ui-button",
+        "z": "34f36098cec742a6",
+        "group": "2d14b8bbc6b01e77",
+        "name": "Aumento de Concentraci\u00f3n",
+        "label": "Aumento de Concentraci\u00f3n",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "Fuerza la concentraci\u00f3n a subir gradualmente",
+        "color": "",
+        "bgcolor": "#c62828",
+        "className": "",
+        "icon": "",
+        "iconPosition": "right",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "equipo1/jarabe/tambo_01/action/aumento_concentracion",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "5b0138b27fc98ed7"
+            ]
+        ]
+    },
+    {
+        "id": "21d948d1a01ee40f",
+        "type": "inject",
+        "z": "34f36098cec742a6",
+        "name": "Shadow get (sync al arrancar)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 1,
+        "topic": "$aws/things/equipo1_jarabe_tambo_01/shadow/get",
+        "payload": "",
+        "payloadType": "str",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "164a626559c80c17"
+            ]
+        ]
+    },
+    {
+        "id": "2fc04e06c2b08c82",
+        "type": "inject",
+        "z": "34f36098cec742a6",
+        "name": "Shadow get (sync al arrancar)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 1,
+        "topic": "$aws/things/equipo1_jarabe_tambo_01/shadow/get",
+        "payload": "",
+        "payloadType": "str",
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "164a626559c80c17"
+            ]
+        ]
+    },
+    {
+        "id": "e40c11ed93929409",
+        "type": "inject",
+        "z": "34f36098cec742a6",
+        "name": "Shadow get (sync al arrancar)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 1,
+        "topic": "$aws/things/equipo1_jarabe_tambo_01/shadow/get",
+        "payload": "",
+        "payloadType": "str",
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "164a626559c80c17"
+            ]
+        ]
+    },
+    {
+        "id": "164a626559c80c17",
+        "type": "mqtt out",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2192 Publish (shadow/update + get)",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "application/json",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bb8594a0dcbcf412",
+        "x": 1410,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7f58c014e894252c",
+        "type": "ui-button",
+        "z": "34f36098cec742a6",
+        "group": "2d14b8bbc6b01e77",
+        "name": "Aumento de Temperatura",
+        "label": "Aumento de Temperatura",
+        "order": 6,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "Cierra la puerta del tambo",
+        "color": "",
+        "bgcolor": "#4caf50",
+        "className": "",
+        "icon": "",
+        "iconPosition": "right",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "equipo1/jarabe/tambo_01/action/aumento_temperatura",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "5b0138b27fc98ed7"
+            ]
+        ]
+    },
+    {
+        "id": "d7f2a8e407856587",
+        "type": "inject",
+        "z": "34f36098cec742a6",
+        "name": "Shadow get (sync al arrancar)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 1,
+        "topic": "$aws/things/equipo1_jarabe_tambo_01/shadow/get",
+        "payload": "",
+        "payloadType": "str",
+        "x": 210,
+        "y": 100,
+        "wires": [
+            [
+                "164a626559c80c17"
+            ]
+        ]
+    },
+    {
+        "id": "ee6301f51ae56790",
+        "type": "function",
+        "z": "34f36098cec742a6",
+        "name": "SIM + Shadow (AWS)",
+        "func": "const init = () => {\n    const cfg = {\n        version: 14,\n        topicBase: 'equipo1/jarabe/tambo_01',\n        thingName: 'equipo1_jarabe_tambo_01',\n\n        tempIdeal: 23, tempMinAlerta: 20, tempMaxAlerta: 25,\n        tempTolerancia: 0.5, tempRisePerTick: 0.8, tempCoolPerTick: 0.8,\n\n        volumenIdeal: 70, volumenMinAlerta: 20, volumenMaxAlerta: 85,\n        volumenRisePerTick: 5, volumenDrainPerTick: 5,\n\n        concIdeal: 65, concMin: 64, concMax: 67,\n        concRisePerTick: 0.5, concDrainPerTick: 0.5, concCorrectRate: 0.1\n    };\n\n    const plant = {\n        tempC: 23, volumen: 70, concentracion: 65,\n        modoAumentoTemp: false, modoDisminucionTemp: false,\n        modoAumentoVol: false, modoDisminucionVol: false,\n        modoLlenado: false,\n        modoAumentoConc: false, modoDisminucionConc: false,\n        msgTempEnviado: 'estable', msgVolEnviado: 'estable', msgConcEnviado: 'normal'\n    };\n\n    const shadow = {\n        reported: {\n            valvula_salida: false,\n            bomba_mezcla: false,\n            enfriamiento: false,\n            calentamiento: false,\n            alert_led: false,\n            led_concentracion: 'VERDE',\n            potencia_motor: 70\n        }\n    };\n    global.set('CFG', cfg); global.set('PLANT', plant); global.set('SHADOW', shadow);\n};\n\nlet cfg = global.get('CFG');\nlet plant = global.get('PLANT');\nlet shadow = global.get('SHADOW');\n\nif (!cfg || cfg.version !== 11) { \n    init(); \n    cfg = global.get('CFG'); \n    plant = global.get('PLANT'); \n    shadow = global.get('SHADOW'); \n}\n\nconst topic = msg.topic || \"\";\nconst isTick = topic.endsWith('/tick');\nlet event = null;\n\nif (topic === 'action/reset') {\n    init(); \n    cfg = global.get('CFG');\n    plant = global.get('PLANT');\n    shadow = global.get('SHADOW');\n}\nif (topic === 'action/aumento_temperatura') plant.modoAumentoTemp = true;\nif (topic === 'action/disminucion_temperatura') plant.modoDisminucionTemp = true;\nif (topic === 'action/aumento_volumen') plant.modoAumentoVol = true;\nif (topic === 'action/disminucion_volumen') plant.modoDisminucionVol = true;\nif (topic === 'action/llenar_tanque') plant.modoLlenado = true;\nif (topic === 'action/aumento_concentracion') plant.modoAumentoConc = true;\nif (topic === 'action/disminucion_concentracion') plant.modoDisminucionConc = true;\n\nif (isTick) {\n    // === AUTOREGULACI\u00d3N (CON INERCIA): DEJA QUE EL ERROR CREZCA ANTES DE VENCER LA FALLA ===\n    if (plant.tempC > cfg.tempMaxAlerta + 1.5) plant.modoAumentoTemp = false;\n    if (plant.tempC < cfg.tempMinAlerta - 1.5) plant.modoDisminucionTemp = false;\n    if (plant.volumen > cfg.volumenMaxAlerta + 4) plant.modoAumentoVol = false;\n    if (plant.concentracion > cfg.concMax + 2) plant.modoAumentoConc = false;\n    if (plant.concentracion < cfg.concMin - 2) plant.modoDisminucionConc = false;\n    // (Omitimos volumenMinAlerta porque el tanque se debe seguir vaciando hasta 0)\n\n    // L\u00f3gica Temperatura\n    if (plant.modoAumentoTemp) {\n        plant.tempC += cfg.tempRisePerTick;\n    } else if (plant.modoDisminucionTemp) {\n        plant.tempC -= cfg.tempCoolPerTick;\n    } else if (shadow.reported.enfriamiento) {\n        plant.tempC -= cfg.tempCoolPerTick;\n        if (plant.tempC <= cfg.tempIdeal) {\n            plant.tempC = cfg.tempIdeal;\n            shadow.reported.enfriamiento = false; \n        }\n    } else if (shadow.reported.calentamiento) {\n        plant.tempC += cfg.tempRisePerTick;\n        if (plant.tempC >= cfg.tempIdeal) {\n            plant.tempC = cfg.tempIdeal;\n            shadow.reported.calentamiento = false; \n        }\n    }\n\n    // L\u00f3gica Volumen\n    if (plant.modoAumentoVol) {\n        plant.volumen += cfg.volumenRisePerTick;\n    } else if (plant.modoDisminucionVol) {\n        plant.volumen -= cfg.volumenDrainPerTick;\n        if (plant.volumen <= 0) {\n            plant.volumen = 0;\n            plant.modoDisminucionVol = false; // Detener en 0\n        }\n    } else if (plant.modoLlenado) {\n        plant.volumen += cfg.volumenRisePerTick;\n        if (plant.volumen >= cfg.volumenIdeal) {\n            plant.volumen = cfg.volumenIdeal;\n            plant.modoLlenado = false;\n        }\n    } else if (shadow.reported.valvula_salida) {\n        plant.volumen -= cfg.volumenDrainPerTick;\n        if (plant.volumen <= cfg.volumenIdeal) {\n            plant.volumen = cfg.volumenIdeal;\n            shadow.reported.valvula_salida = false; \n        }\n    }\n\n    // L\u00f3gica Concentraci\u00f3n\n    if (plant.modoAumentoConc) {\n        plant.concentracion += cfg.concRisePerTick;\n    } else if (plant.modoDisminucionConc) {\n        plant.concentracion -= cfg.concDrainPerTick;\n    } else if (shadow.reported.bomba_mezcla) {\n        plant.concentracion += (cfg.concIdeal - plant.concentracion) * cfg.concCorrectRate;\n        if (Math.abs(plant.concentracion - cfg.concIdeal) < 0.2) {\n            plant.concentracion = cfg.concIdeal;\n        }\n    }\n\n    plant.tempC = Math.round(plant.tempC * 10) / 10;\n    plant.volumen = Math.round(plant.volumen * 10) / 10;\n    plant.concentracion = Math.round(plant.concentracion * 10) / 10;\n}\n\nif (plant.tempC > cfg.tempMaxAlerta && plant.msgTempEnviado !== 'alerta_alta') {\n    event = { type: 'warn', text: `\u26a0\ufe0f ALERTA: Temperatura ALTA (${plant.tempC}\u00b0C). Activando enfriamiento.` };\n    plant.msgTempEnviado = 'alerta_alta';\n    shadow.reported.enfriamiento = true;\n    shadow.reported.calentamiento = false;\n} else if (plant.tempC < cfg.tempMinAlerta && plant.msgTempEnviado !== 'alerta_baja') {\n    event = { type: 'warn', text: `\u26a0\ufe0f ALERTA: Temperatura BAJA (${plant.tempC}\u00b0C). Activando calentamiento.` };\n    plant.msgTempEnviado = 'alerta_baja';\n    shadow.reported.calentamiento = true;\n    shadow.reported.enfriamiento = false;\n} else if (plant.tempC >= cfg.tempMinAlerta && plant.tempC <= cfg.tempMaxAlerta && (plant.msgTempEnviado === 'alerta_alta' || plant.msgTempEnviado === 'alerta_baja')) {\n    event = { type: 'ok', text: `\u2705 Temperatura estable (${plant.tempC}\u00b0C).` };\n    plant.msgTempEnviado = 'estable';\n}\n\nif (plant.volumen > cfg.volumenMaxAlerta && plant.msgVolEnviado !== 'alerta_alta') {\n    event = { type: 'warn', text: `\ud83d\udce6 ALERTA: Volumen ALTO (${plant.volumen}%). Abriendo v\u00e1lvula de salida.` };\n    plant.msgVolEnviado = 'alerta_alta';\n    shadow.reported.valvula_salida = true;\n} else if (plant.volumen < cfg.volumenMinAlerta) {\n    let isCritical = plant.volumen <= 19;\n    let currentState = isCritical ? 'alerta_baja_critica' : 'alerta_baja';\n    if (plant.msgVolEnviado !== currentState) {\n        let extraMsg = isCritical ? \" Se requiere acci\u00f3n manual para volver a llenar el tanque.\" : \"\";\n        event = { type: 'warn', text: `\ud83d\udce6 ALERTA: Volumen BAJO (${plant.volumen}%).${extraMsg}` };\n        plant.msgVolEnviado = currentState;\n        shadow.reported.valvula_salida = false;\n    }\n} else if (plant.volumen >= cfg.volumenMinAlerta && plant.volumen <= cfg.volumenMaxAlerta && (plant.msgVolEnviado === 'alerta_alta' || plant.msgVolEnviado.startsWith('alerta_baja'))) {\n    event = { type: 'ok', text: `\u2705 Volumen estable (${plant.volumen}%).` };\n    plant.msgVolEnviado = 'estable';\n}\n\nif (plant.concentracion < cfg.concMin) {\n    shadow.reported.led_concentracion = 'AZUL';\n    shadow.reported.bomba_mezcla = true;\n    shadow.reported.potencia_motor = 40;\n    if (plant.msgConcEnviado !== 'baja') {\n        event = { type: 'warn', text: `\ud83d\udd35 ALERTA: Concentraci\u00f3n BAJA (${plant.concentracion} Brix). Potencia del motor al 40%.` };\n        plant.msgConcEnviado = 'baja';\n    }\n} else if (plant.concentracion > cfg.concMax) {\n    shadow.reported.led_concentracion = 'ROJO';\n    shadow.reported.bomba_mezcla = true;\n    shadow.reported.potencia_motor = 90;\n    if (plant.msgConcEnviado !== 'alta') {\n        event = { type: 'warn', text: `\ud83d\udd34 ALERTA: Concentraci\u00f3n ALTA (${plant.concentracion} Brix). Potencia del motor al 90%.` };\n        plant.msgConcEnviado = 'alta';\n    }\n} else if (plant.concentracion >= cfg.concMin && plant.concentracion <= cfg.concMax) {\n    shadow.reported.led_concentracion = 'VERDE';\n    shadow.reported.bomba_mezcla = false;\n    shadow.reported.potencia_motor = 70;\n    if (plant.msgConcEnviado === 'baja' || plant.msgConcEnviado === 'alta') {\n        event = { type: 'ok', text: `\ud83d\udfe2 Concentraci\u00f3n normal (${plant.concentracion} Brix). Potencia del motor al 70%.` };\n        plant.msgConcEnviado = 'normal';\n    }\n}\n\nshadow.reported.alert_led = (shadow.reported.enfriamiento || shadow.reported.calentamiento || shadow.reported.valvula_salida || shadow.reported.bomba_mezcla);\n\nglobal.set('PLANT', plant);\nglobal.set('SHADOW', shadow);\n\nconst telemetry = {\n    telemetry: {\n        temperature_c: plant.tempC,\n        volumen: plant.volumen,\n        concentracion: plant.concentracion,\n        led_status: shadow.reported.led_concentracion,\n        status: shadow.reported.alert_led ? \"CORRIGIENDO\" : \"ESTABLE\"\n    },\n    actuadores: shadow.reported\n};\n\nlet m1 = { topic: cfg.topicBase + '/telemetry', payload: telemetry };\nlet m2 = { topic: `$aws/things/${cfg.thingName}/shadow/update`, payload: { state: { reported: shadow.reported } } };\nlet m3 = event ? { payload: { text: event.text, type: event.type, ts: Date.now() } } : null;\n\nreturn [m1, m2, m3];",
+        "outputs": 3,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 600,
+        "wires": [
+            [
+                "2857c644783f10a8"
+            ],
+            [
+                "53daaa7d60a0aac4"
+            ],
+            [
+                "71244c28a5f63e9f"
+            ]
+        ]
+    },
+    {
+        "id": "2857c644783f10a8",
+        "type": "json",
+        "z": "34f36098cec742a6",
+        "name": "to JSON string",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 990,
+        "y": 540,
+        "wires": [
+            [
+                "c52984a3125dd0cc"
+            ]
+        ]
+    },
+    {
+        "id": "c52984a3125dd0cc",
+        "type": "mqtt out",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2192 Publish (telemetry)",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "application/json",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bb8594a0dcbcf412",
+        "x": 1340,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "71244c28a5f63e9f",
+        "type": "change",
+        "z": "34f36098cec742a6",
+        "name": "Set topic: .../event",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "equipo1/jarabe/tambo_01/event",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 720,
+        "wires": [
+            [
+                "07a5225a7fea6b57"
+            ]
+        ]
+    },
+    {
+        "id": "07a5225a7fea6b57",
+        "type": "json",
+        "z": "34f36098cec742a6",
+        "name": "to JSON string",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 1050,
+        "y": 720,
+        "wires": [
+            [
+                "ce4049db47734545"
+            ]
+        ]
+    },
+    {
+        "id": "ce4049db47734545",
+        "type": "mqtt out",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2192 Publish (event)",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "application/json",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bb8594a0dcbcf412",
+        "x": 1280,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "0d53b1a15b3c5fa0",
+        "type": "mqtt in",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2190 tick",
+        "topic": "equipo1/jarabe/tambo_01/tick",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "bb8594a0dcbcf412",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 640,
+        "wires": [
+            [
+                "e6a42fd6b26204a2"
+            ]
+        ]
+    },
+    {
+        "id": "75546f8581666dcd",
+        "type": "mqtt in",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2190 acciones",
+        "topic": "equipo1/jarabe/tambo_01/action/#",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "bb8594a0dcbcf412",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 700,
+        "wires": [
+            [
+                "e6a42fd6b26204a2"
+            ]
+        ]
+    },
+    {
+        "id": "e6a42fd6b26204a2",
+        "type": "function",
+        "z": "34f36098cec742a6",
+        "name": "Normalize topic (para SIM)",
+        "func": "const t = msg.topic || \"\";\nif (t.endsWith(\"action/reset\")) msg.topic = \"action/reset\";\nif (t.endsWith(\"action/aumento_temperatura\")) msg.topic = \"action/aumento_temperatura\";\nif (t.endsWith(\"action/disminucion_temperatura\")) msg.topic = \"action/disminucion_temperatura\";\nif (t.endsWith(\"action/aumento_volumen\")) msg.topic = \"action/aumento_volumen\";\nif (t.endsWith(\"action/disminucion_volumen\")) msg.topic = \"action/disminucion_volumen\";\nif (t.endsWith(\"action/llenar_tanque\")) msg.topic = \"action/llenar_tanque\";\nif (t.endsWith(\"action/aumento_concentracion\")) msg.topic = \"action/aumento_concentracion\";\nif (t.endsWith(\"action/disminucion_concentracion\")) msg.topic = \"action/disminucion_concentracion\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 600,
+        "wires": [
+            [
+                "ee6301f51ae56790"
+            ]
+        ]
+    },
+    {
+        "id": "53daaa7d60a0aac4",
+        "type": "json",
+        "z": "34f36098cec742a6",
+        "name": "to JSON string (shadow)",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 990,
+        "y": 600,
+        "wires": [
+            [
+                "164a626559c80c17"
+            ]
+        ]
+    },
+    {
+        "id": "69143730b12ed058",
+        "type": "mqtt in",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2190 shadow/delta",
+        "topic": "$aws/things/equipo1_jarabe_tambo_01/shadow/update/delta",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "bb8594a0dcbcf412",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 760,
+        "wires": [
+            [
+                "ee6301f51ae56790"
+            ]
+        ]
+    },
+    {
+        "id": "666b02660db0e36f",
+        "type": "mqtt in",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2190 shadow/update/accepted",
+        "topic": "$aws/things/equipo1_jarabe_tambo_01/shadow/update/accepted",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "bb8594a0dcbcf412",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 800,
+        "wires": [
+            [
+                "8f82fe0afe67ae51"
+            ]
+        ]
+    },
+    {
+        "id": "f2d92f6ce8a0907b",
+        "type": "mqtt in",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2190 shadow/update/rejected",
+        "topic": "$aws/things/equipo1_jarabe_tambo_01/shadow/update/rejected",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "bb8594a0dcbcf412",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 860,
+        "wires": [
+            [
+                "177b2d422387428a"
+            ]
+        ]
+    },
+    {
+        "id": "9772a017afa08565",
+        "type": "mqtt in",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2190 shadow/get/accepted",
+        "topic": "$aws/things/equipo1_jarabe_tambo_01/shadow/get/accepted",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "bb8594a0dcbcf412",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 920,
+        "wires": [
+            [
+                "2ca15905b971095d"
+            ]
+        ]
+    },
+    {
+        "id": "1f76e34c0ccb6497",
+        "type": "mqtt in",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2190 shadow/get/rejected",
+        "topic": "$aws/things/equipo1_jarabe_tambo_01/shadow/get/rejected",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "bb8594a0dcbcf412",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 960,
+        "wires": [
+            [
+                "12a13b6b5264df03"
+            ]
+        ]
+    },
+    {
+        "id": "a593701b690d7278",
+        "type": "comment",
+        "z": "34f36098cec742a6",
+        "name": "=== BLOQUE: Shadow AWS (reserved topics) ===",
+        "info": "Suscripciones:\n- $aws/things/<ThingName>/shadow/update/delta\n- $aws/things/<ThingName>/shadow/update/accepted|rejected\n- (opcional) $aws/things/<ThingName>/shadow/get/accepted|rejected\n\nPublicaci\u00f3n:\n- $aws/things/<ThingName>/shadow/update (reported)\n- (opcional) $aws/things/<ThingName>/shadow/get (sync)",
+        "x": 280,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "8f82fe0afe67ae51",
+        "type": "debug",
+        "z": "34f36098cec742a6",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "177b2d422387428a",
+        "type": "debug",
+        "z": "34f36098cec742a6",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 850,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "2ca15905b971095d",
+        "type": "debug",
+        "z": "34f36098cec742a6",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "12a13b6b5264df03",
+        "type": "debug",
+        "z": "34f36098cec742a6",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "89a0325c4b36e331",
+        "type": "mqtt in",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2190 telemetry",
+        "topic": "equipo1/jarabe/tambo_01/telemetry",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "bb8594a0dcbcf412",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 1240,
+        "wires": [
+            [
+                "60f93f4f133873ee",
+                "0b5c846dd7b65667"
+            ]
+        ]
+    },
+    {
+        "id": "60f93f4f133873ee",
+        "type": "json",
+        "z": "34f36098cec742a6",
+        "name": "parse JSON",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 530,
+        "y": 1100,
+        "wires": [
+            [
+                "eaf08486e0f131f9"
+            ]
+        ]
+    },
+    {
+        "id": "6833bb66ff8dc388",
+        "type": "mqtt in",
+        "z": "34f36098cec742a6",
+        "name": "AWS \u2190 event",
+        "topic": "equipo1/jarabe/tambo_01/event",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "bb8594a0dcbcf412",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 1180,
+        "wires": [
+            [
+                "ef8ee3e3025b3ac7"
+            ]
+        ]
+    },
+    {
+        "id": "ef8ee3e3025b3ac7",
+        "type": "json",
+        "z": "34f36098cec742a6",
+        "name": "parse JSON",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 590,
+        "y": 1180,
+        "wires": [
+            [
+                "9a21358a26b19550",
+                "861b9fa6a178b8b1"
+            ]
+        ]
+    },
+    {
+        "id": "eaf08486e0f131f9",
+        "type": "debug",
+        "z": "34f36098cec742a6",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "msg.payload.telemetry.temperature_c",
+        "statusType": "msg",
+        "x": 800,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "9a21358a26b19550",
+        "type": "debug",
+        "z": "34f36098cec742a6",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload.text",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 790,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "861b9fa6a178b8b1",
+        "type": "function",
+        "z": "34f36098cec742a6",
+        "name": "Split Alerts (notify + beep)",
+        "func": "const p = msg.payload || {};\n\n// 1) Notificaci\u00f3n (texto + color por tipo)\nlet n = null;\nif (p.text) {\n    // Colores sugeridos por severidad\n    const colorByType = {\n        info: \"#000000\",\n        warn: \"#ff8c00\",  // naranja\n        error: \"#cc0000\",  // rojo\n        ok: \"#008000\"   // verde\n    };\n\n    n = {\n        payload: p.text,\n        // FlowFuse Dashboard: puedes pasar ui_update para cambiar estilo\n        ui_update: {\n            // si tu ui-notification respeta color, \u00fasalo\n            color: colorByType[p.type] || \"#000000\"\n        }\n    };\n}\n\n// 2) Beep (solo si beep === true)\nlet b = null;\nif (p.beep === true) {\n    b = { payload: { beep: true, times: p.times || 2 } };\n}\n\nreturn [n, b];\n",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1400,
+        "wires": [
+            [
+                "33ec3881578de083"
+            ],
+            [
+                "23b8bc1fa3bd7020"
+            ]
+        ]
+    },
+    {
+        "id": "33ec3881578de083",
+        "type": "ui-notification",
+        "z": "34f36098cec742a6",
+        "ui": "f0b0a1c2d3e4f5a6",
+        "position": "center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "3",
+        "showCountdown": false,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Cerrar",
+        "allowConfirm": false,
+        "confirmText": "OK",
+        "raw": false,
+        "className": "",
+        "name": "Notificaciones",
+        "x": 680,
+        "y": 1460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "23b8bc1fa3bd7020",
+        "type": "ui-template",
+        "z": "34f36098cec742a6",
+        "group": "2d14b8bbc6b01e77",
+        "page": "",
+        "ui": "",
+        "name": "Buzzer (beep browser)",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<template>\n    <div class=\"hidden\"></div>\n</template>\n\n<script>\nexport default {\n    methods: {\n        beep(times = 2) {\n            try {\n                // Compatibilidad con navegadores\n                const Ctx = window.AudioContext || window.webkitAudioContext;\n                const ctx = new Ctx();\n                let t = ctx.currentTime;\n\n                for (let i = 0; i < times; i++) {\n                    const osc = ctx.createOscillator();\n                    const gain = ctx.createGain();\n\n                    // Configuraci\u00f3n del tono\n                    osc.type = 'square';\n                    osc.frequency.value = 880;\n\n                    // Configuraci\u00f3n del volumen (Envolvente ADSR simple)\n                    gain.gain.setValueAtTime(0.0001, t);\n                    gain.gain.exponentialRampToValueAtTime(0.2, t + 0.01);    // Attack\n                    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.12); // Decay\n\n                    // Conexiones\n                    osc.connect(gain);\n                    gain.connect(ctx.destination);\n\n                    // Ejecuci\u00f3n\n                    osc.start(t);\n                    osc.stop(t + 0.13);\n\n                    // Espacio entre beeps\n                    t += 0.18;\n                }\n\n                // Limpieza del contexto de audio\n                setTimeout(() => ctx.close(), 800);\n\n            } catch (e) {\n                console.log(e);\n            }\n        }\n    },\n    watch: {\n        msg() {\n            // Escuchar mensajes entrantes para activar el beep\n            if (this.msg?.payload?.beep) {\n                this.beep(this.msg.payload.times || 2);\n            }\n        }\n    }\n};\n</script>\n\n<style>\n    .hidden {\n        display: none !important;\n    }\n</style>",
+        "storeOutMessages": false,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0b5c846dd7b65667",
+        "type": "function",
+        "z": "34f36098cec742a6",
+        "name": "Gauge, Chart y Alertas",
+        "func": "const payload = msg.payload || {};\nconst tel = payload.telemetry || {};\nconst act = payload.actuadores || {};\n\nconst temp = (tel.temperature_c !== undefined) ? Number(tel.temperature_c) : 0;\nconst vol = (tel.volumen !== undefined) ? Number(tel.volumen) : 0;\nconst conc = (tel.concentracion !== undefined) ? Number(tel.concentracion) : 0;\n\nconst mTempGauge = { payload: temp };\nconst mVolGauge = { payload: vol };\nconst mConcGauge = { payload: conc };\n\nconst mTempChart = { topic: \"Temperatura \u00b0C\", payload: temp };\nconst mVolChart = { topic: \"Volumen %\", payload: vol };\nconst mConcChart = { topic: \"Concentraci\u00f3n Brix\", payload: conc };\n\nconst alertLed = !!act.alert_led;\nconst ledConc = tel.led_status || \"VERDE\";\nconst potencia = act.potencia_motor !== undefined ? act.potencia_motor : 70;\n\nconst mk = (label, val, color) => ({ payload: val, ui_update: { label, color } });\n\nlet tempState = \"STANDBY\";\nlet tempColor = \"gray\";\nif (act.enfriamiento) { tempState = \"ENFRIANDO\"; tempColor = \"#00AAFF\"; }\nif (act.calentamiento) { tempState = \"CALENTANDO\"; tempColor = \"#FF5500\"; }\nconst mCompresor = mk(\"Temp Control\", tempState, tempColor);\n\nconst mVSalida = mk(\"V\u00e1lvula Salida\", act.valvula_salida ? \"ABIERTA\" : \"CERRADA\", act.valvula_salida ? \"orange\" : \"gray\");\n\nlet potColor = \"green\";\nif (potencia === 40) potColor = \"blue\";\nif (potencia === 90) potColor = \"red\";\nconst mPotencia = mk(\"Potencia del motor\", potencia + \"%\", potColor);\n\nconst mBomba = mk(\"Control de las Aspas\", act.bomba_mezcla ? \"ON\" : \"OFF\", act.bomba_mezcla ? \"green\" : \"gray\");\nconst mLed = mk(\"Estado\", alertLed ? \"\u26a0\ufe0f ALERTA\" : \"\u2705 OK\", alertLed ? \"red\" : \"green\");\nconst mBuzz = mk(\"Buzzer\", alertLed ? \"ON\" : \"OFF\", alertLed ? \"red\" : \"gray\");\nconst mPhase = mk(\"Fase\", tel.status || \"ESTABLE\", \"black\");\nconst mLedPanel = { payload: { colorLED: ledConc, temp, vol, conc } };\n\nreturn [\n    mTempGauge, mVolGauge, mConcGauge, // 1, 2, 3\n    mTempChart, mVolChart, mConcChart, // 4, 5, 6\n    mCompresor, mVSalida, mPotencia,   // 7, 8, 9 \n    mBomba, mLed, mBuzz,               // 10, 11, 12\n    mPhase, mLedPanel                  // 13, 14\n];",
+        "outputs": 14,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 1320,
+        "wires": [
+            [
+                "f7aa49b769c68511"
+            ],
+            [
+                "055e50c9f2326fb6"
+            ],
+            [
+                "7c2b7a22460826ad"
+            ],
+            [
+                "c9d245a647a8c40f"
+            ],
+            [
+                "7463619d1772766b"
+            ],
+            [
+                "d75c00b2d6b43b66"
+            ],
+            [
+                "7519d6c731ae16d6"
+            ],
+            [
+                "ec5fe145372c9a48"
+            ],
+            [
+                "e436893dada65ba5"
+            ],
+            [
+                "a11b376f476458f9"
+            ],
+            [
+                "39b2eb2e7e4e1225"
+            ],
+            [
+                "c2b6728b5b9e5ad4"
+            ],
+            [
+                "367ebd49e4392142"
+            ],
+            [
+                "c4625da535c24f29"
+            ]
+        ]
+    },
+    {
+        "id": "c9d245a647a8c40f",
+        "type": "ui-chart",
+        "z": "34f36098cec742a6",
+        "group": "5cd9a3084c6c513f",
+        "name": "Temp Chart",
+        "label": "Temperatura vs tiempo",
+        "order": 4,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "topic",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "50",
+        "bins": "",
+        "action": "append",
+        "stackSeries": false,
+        "pointRadius": "",
+        "showLegend": false,
+        "removeOlder": "10",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0f0f0f",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#579ce5",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#0d9c1d"
+        ],
+        "textColor": [
+            "#ffffeb"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "7",
+        "height": "5",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1010,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7519d6c731ae16d6",
+        "type": "ui-text",
+        "z": "34f36098cec742a6",
+        "group": "452028881710c18b",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "name": "Enfriamiento",
+        "label": "Enfriamiento",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "",
+        "fontSize": "20px",
+        "color": "#ffffff",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1010,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "ec5fe145372c9a48",
+        "type": "ui-text",
+        "z": "34f36098cec742a6",
+        "group": "452028881710c18b",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "name": "Valvula Salida",
+        "label": "Valvula Salida",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "",
+        "fontSize": "20px",
+        "color": "#ffffff",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1020,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "f7aa49b769c68511",
+        "type": "ui-gauge",
+        "z": "34f36098cec742a6",
+        "name": "Temp",
+        "group": "5cd9a3084c6c513f",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "6",
+        "height": "4",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Temperatura (\u00b0C)",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": 0,
+                "color": "#2196f3"
+            },
+            {
+                "from": 20,
+                "color": "#4caf50"
+            },
+            {
+                "from": 25,
+                "color": "#f44336"
+            }
+        ],
+        "min": 0,
+        "max": 50,
+        "sizeThickness": "20",
+        "sizeGap": "10",
+        "sizeKeyThickness": "",
+        "className": "",
+        "x": 970,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "055e50c9f2326fb6",
+        "type": "ui-gauge",
+        "z": "34f36098cec742a6",
+        "name": "Volumen",
+        "group": "5cd9a3084c6c513f",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "6",
+        "height": "4",
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "Volumen",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": 0,
+                "color": "#f44336"
+            },
+            {
+                "from": 20,
+                "color": "#4caf50"
+            },
+            {
+                "from": 85,
+                "color": "#f44336"
+            }
+        ],
+        "min": 0,
+        "max": 100,
+        "sizeThickness": "20",
+        "sizeGap": "10",
+        "sizeKeyThickness": "",
+        "className": "",
+        "x": 980,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c2b7a22460826ad",
+        "type": "ui-gauge",
+        "z": "34f36098cec742a6",
+        "name": "Concentracion",
+        "group": "5cd9a3084c6c513f",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "6",
+        "height": "4",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Concentracion (Brix)",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "50",
+                "color": "#2196f3",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "64",
+                "color": "#4caf50",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "67",
+                "color": "#f44336",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 50,
+        "max": 80,
+        "sizeThickness": "20",
+        "sizeGap": "10",
+        "sizeKeyThickness": "",
+        "className": "",
+        "x": 1000,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7463619d1772766b",
+        "type": "ui-chart",
+        "z": "34f36098cec742a6",
+        "group": "5cd9a3084c6c513f",
+        "name": "VolChart",
+        "label": "Volumenvs tiempo",
+        "order": 5,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "topic",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "100",
+        "bins": "",
+        "action": "append",
+        "stackSeries": false,
+        "pointRadius": "",
+        "showLegend": false,
+        "removeOlder": "10",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0f0f0f",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#579ce5",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#0d9c1d"
+        ],
+        "textColor": [
+            "#ffffeb"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "7",
+        "height": "5",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1000,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d75c00b2d6b43b66",
+        "type": "ui-chart",
+        "z": "34f36098cec742a6",
+        "group": "5cd9a3084c6c513f",
+        "name": "Con Chart",
+        "label": "Concentracion vs tiempo",
+        "order": 6,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "topic",
+        "yAxisPropertyType": "msg",
+        "ymin": "50",
+        "ymax": "80",
+        "bins": "",
+        "action": "append",
+        "stackSeries": false,
+        "pointRadius": "",
+        "showLegend": false,
+        "removeOlder": "10",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0f0f0f",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#579ce5",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#0d9c1d"
+        ],
+        "textColor": [
+            "#ffffeb"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "7",
+        "height": "5",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1010,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e436893dada65ba5",
+        "type": "ui-text",
+        "z": "34f36098cec742a6",
+        "group": "452028881710c18b",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "name": "Potencia del motor",
+        "label": "Potencia del motor",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "",
+        "fontSize": "20px",
+        "color": "#ffffff",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1020,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "a11b376f476458f9",
+        "type": "ui-text",
+        "z": "34f36098cec742a6",
+        "group": "452028881710c18b",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "name": "Control de Aspas",
+        "label": "Control de Aspas",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "",
+        "fontSize": "20px",
+        "color": "#ffffff",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1030,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "39b2eb2e7e4e1225",
+        "type": "ui-text",
+        "z": "34f36098cec742a6",
+        "group": "452028881710c18b",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "name": "Alerta Led",
+        "label": "Alerta Led",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "",
+        "fontSize": "20px",
+        "color": "#ffffff",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1030,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "c2b6728b5b9e5ad4",
+        "type": "ui-text",
+        "z": "34f36098cec742a6",
+        "group": "452028881710c18b",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "name": "Buzzer",
+        "label": "Buzzer",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "",
+        "fontSize": "20px",
+        "color": "#ffffff",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1020,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "367ebd49e4392142",
+        "type": "ui-text",
+        "z": "34f36098cec742a6",
+        "group": "452028881710c18b",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "name": "Fase",
+        "label": "Fase",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "",
+        "fontSize": "20px",
+        "color": "#ffffff",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1010,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "c4625da535c24f29",
+        "type": "ui-template",
+        "z": "34f36098cec742a6",
+        "group": "452028881710c18b",
+        "page": "",
+        "ui": "",
+        "name": "Panel Concentracion",
+        "order": 1,
+        "width": "6",
+        "height": "5",
+        "head": "",
+        "format": "<template>\n  <div style=\"padding:12px; font-family: sans-serif;\">\n\n    <!-- T\u00edtulo -->\n    <div style=\"text-align:center; margin-bottom:16px;\">\n      <span style=\"font-size:18px; font-weight:bold; color:#1a6b3c;\">\n        \ud83d\udc8a TAMBO DE JARABE FARMAC\u00c9UTICO\n      </span>\n    </div>\n\n    <!-- LED AZUL \u2014 Concentraci\u00f3n baja -->\n    <div :style=\"{\n           display:'flex', alignItems:'center', margin:'10px 0',\n           padding:'10px', borderRadius:'8px',\n           background: msg.payload.colorLED === 'AZUL' ? '#e3f2fd' : '#f8f8f8',\n           border: '2px solid ' + (msg.payload.colorLED === 'AZUL' ? '#2196f3' : '#ddd')\n         }\">\n      <div :style=\"{\n             width:'36px', height:'36px', borderRadius:'50%', marginRight:'14px', flexShrink:'0',\n             background:  msg.payload.colorLED === 'AZUL' ? '#2196f3' : '#ccc',\n             boxShadow:   msg.payload.colorLED === 'AZUL'\n                            ? '0 0 18px #2196f3, 0 0 36px #90caf9' : 'none',\n             transition: 'all 0.4s ease'\n           }\"></div>\n      <div style=\"flex:1;\">\n        <div style=\"font-weight:bold; font-size:15px; color:#2196f3;\">\ud83d\udd35 LED AZUL</div>\n        <div style=\"font-size:12px; color:#555;\">Concentraci\u00f3n baja \u2014 Falta soluto</div>\n        <div style=\"font-size:11px; color:#888;\">Activo si conc. &lt; 64 Brix</div>\n      </div>\n      <div style=\"font-size:22px; margin-left:8px;\">\n        {{ msg.payload.colorLED === 'AZUL' ? '\u25cf' : '\u25cb' }}\n      </div>\n    </div>\n\n    <!-- LED VERDE \u2014 Concentraci\u00f3n ideal -->\n    <div :style=\"{\n           display:'flex', alignItems:'center', margin:'10px 0',\n           padding:'10px', borderRadius:'8px',\n           background: msg.payload.colorLED === 'VERDE' ? '#e8f5e9' : '#f8f8f8',\n           border: '2px solid ' + (msg.payload.colorLED === 'VERDE' ? '#4caf50' : '#ddd')\n         }\">\n      <div :style=\"{\n             width:'36px', height:'36px', borderRadius:'50%', marginRight:'14px', flexShrink:'0',\n             background:  msg.payload.colorLED === 'VERDE' ? '#4caf50' : '#ccc',\n             boxShadow:   msg.payload.colorLED === 'VERDE'\n                            ? '0 0 18px #4caf50, 0 0 36px #a5d6a7' : 'none',\n             transition: 'all 0.4s ease'\n           }\"></div>\n      <div style=\"flex:1;\">\n        <div style=\"font-weight:bold; font-size:15px; color:#4caf50;\">\ud83d\udfe2 LED VERDE</div>\n        <div style=\"font-size:12px; color:#555;\">Concentraci\u00f3n ideal \u2014 Mezcla perfecta</div>\n        <div style=\"font-size:11px; color:#888;\">Activo si conc. 64\u201367 Brix</div>\n      </div>\n      <div style=\"font-size:22px; margin-left:8px;\">\n        {{ msg.payload.colorLED === 'VERDE' ? '\u25cf' : '\u25cb' }}\n      </div>\n    </div>\n\n    <!-- LED ROJO \u2014 Concentraci\u00f3n alta -->\n    <div :style=\"{\n           display:'flex', alignItems:'center', margin:'10px 0',\n           padding:'10px', borderRadius:'8px',\n           background: msg.payload.colorLED === 'ROJO' ? '#ffebee' : '#f8f8f8',\n           border: '2px solid ' + (msg.payload.colorLED === 'ROJO' ? '#f44336' : '#ddd')\n         }\">\n      <div :style=\"{\n             width:'36px', height:'36px', borderRadius:'50%', marginRight:'14px', flexShrink:'0',\n             background:  msg.payload.colorLED === 'ROJO' ? '#f44336' : '#ccc',\n             boxShadow:   msg.payload.colorLED === 'ROJO'\n                            ? '0 0 18px #f44336, 0 0 36px #ef9a9a' : 'none',\n             transition: 'all 0.4s ease'\n           }\"></div>\n      <div style=\"flex:1;\">\n        <div style=\"font-weight:bold; font-size:15px; color:#f44336;\">\ud83d\udd34 LED ROJO</div>\n        <div style=\"font-size:12px; color:#555;\">Concentraci\u00f3n alta \u2014 Riesgo de saturaci\u00f3n</div>\n        <div style=\"font-size:11px; color:#888;\">Activo si conc. &gt; 67 Brix</div>\n      </div>\n      <div style=\"font-size:22px; margin-left:8px;\">\n        {{ msg.payload.colorLED === 'ROJO' ? '\u25cf' : '\u25cb' }}\n      </div>\n    </div>\n\n    <!-- Tarjetas de valores en tiempo real -->\n    <div style=\"display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;\">\n\n      <!-- Concentraci\u00f3n -->\n      <div style=\"flex:1; min-width:100px; padding:10px; background:#f5f5f5;\n                  border-radius:8px; text-align:center;\">\n        <div style=\"font-size:11px; color:#888; margin-bottom:4px;\">Concentraci\u00f3n</div>\n        <div style=\"font-size:24px; font-weight:bold;\" :style=\"{ color: msg.payload.colorLED === 'AZUL' ? '#2196f3'\n                            : msg.payload.colorLED === 'ROJO' ? '#f44336' : '#4caf50' }\">\n          {{ msg.payload.conc !== undefined ? msg.payload.conc : '--' }}\n        </div>\n        <div style=\"font-size:11px; color:#999;\">Brix</div>\n      </div>\n\n      <!-- Temperatura -->\n      <div style=\"flex:1; min-width:100px; padding:10px; background:#f5f5f5;\n                  border-radius:8px; text-align:center;\">\n        <div style=\"font-size:11px; color:#888; margin-bottom:4px;\">Temperatura</div>\n        <div style=\"font-size:24px; font-weight:bold;\"\n          :style=\"{ color: msg.payload.temp > 25 || msg.payload.temp < 20 ? '#f44336' : '#333' }\">\n          {{ msg.payload.temp !== undefined ? msg.payload.temp : '--' }}\n        </div>\n        <div style=\"font-size:11px; color:#999;\">\u00b0C</div>\n      </div>\n\n      <!-- Volumen -->\n      <div style=\"flex:1; min-width:100px; padding:10px; background:#f5f5f5;\n                  border-radius:8px; text-align:center;\">\n        <div style=\"font-size:11px; color:#888; margin-bottom:4px;\">Volumen</div>\n        <div style=\"font-size:24px; font-weight:bold;\"\n          :style=\"{ color: msg.payload.vol > 85 || msg.payload.vol < 20 ? '#f44336' : '#333' }\">\n          {{ msg.payload.vol !== undefined ? msg.payload.vol : '--' }}\n        </div>\n        <div style=\"font-size:11px; color:#999;\">%</div>\n      </div>\n\n    </div>\n\n  </div>\n</template>",
+        "storeOutMessages": false,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1020,
+        "y": 1820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ddf813db145bf483",
+        "type": "ui-button",
+        "z": "34f36098cec742a6",
+        "group": "2d14b8bbc6b01e77",
+        "name": "Disminucion de Volumen",
+        "label": "Disminuci\u00f3n de Volumen",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "Fuerza el nivel a bajar r\u00e1pidamente",
+        "color": "",
+        "bgcolor": "#ff9800",
+        "className": "",
+        "icon": "",
+        "iconPosition": "right",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "equipo1/jarabe/tambo_01/action/disminucion_volumen",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 180,
+        "y": 250,
+        "wires": [
+            [
+                "5b0138b27fc98ed7"
+            ]
+        ]
+    },
+    {
+        "id": "427b58dba729f19a",
+        "type": "ui-button",
+        "z": "34f36098cec742a6",
+        "group": "2d14b8bbc6b01e77",
+        "name": "Disminucion de Temperatura",
+        "label": "Disminuci\u00f3n de Temperatura",
+        "order": 6,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "Fuerza la temperatura a bajar r\u00e1pidamente",
+        "color": "",
+        "bgcolor": "#00bcd4",
+        "className": "",
+        "icon": "",
+        "iconPosition": "right",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "equipo1/jarabe/tambo_01/action/disminucion_temperatura",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 190,
+        "y": 130,
+        "wires": [
+            [
+                "5b0138b27fc98ed7"
+            ]
+        ]
+    },
+    {
+        "id": "bb8594a0dcbcf412",
+        "type": "mqtt-broker",
+        "name": "AWS_Mel",
+        "broker": "a2xn9e6v7c5114-ats.iot.us-west-2.amazonaws.com",
+        "port": "8883",
+        "tls": "73ba5ac0cc79c857",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "5",
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2d14b8bbc6b01e77",
+        "type": "ui-group",
+        "name": "\ud83c\udf9b\ufe0f Controles",
+        "page": "14c2e8a3d0cddf7d",
+        "width": 12,
+        "height": 3,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "f0b0a1c2d3e4f5a6",
+        "type": "ui-base",
+        "name": "Dashboard S4",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": false,
+        "acceptsClientConfig": false,
+        "showPathInSidebar": true,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "fixed",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 5,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "5cd9a3084c6c513f",
+        "type": "ui-group",
+        "name": "\ud83d\udcca Sensores",
+        "page": "14c2e8a3d0cddf7d",
+        "width": 12,
+        "height": 12,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "452028881710c18b",
+        "type": "ui-group",
+        "name": "\u2699\ufe0f Actuadores y Estado",
+        "page": "14c2e8a3d0cddf7d",
+        "width": 12,
+        "height": 6,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "73ba5ac0cc79c857",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "9a658b24e734b71470a3e1ac2f35c32f1e84f2d35202d8487865acff5cf2530c-certificate.pem.crt",
+        "keyname": "9a658b24e734b71470a3e1ac2f35c32f1e84f2d35202d8487865acff5cf2530c-private.pem.key",
+        "caname": "AmazonRootCA1.pem",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "14c2e8a3d0cddf7d",
+        "type": "ui-page",
+        "name": "Jarabe Farmac\u00e9utico",
+        "ui": "f0b0a1c2d3e4f5a6",
+        "path": "/Proyecto",
+        "icon": "mdi-beaker",
+        "layout": "grid",
+        "theme": "51ba5f43c17a4fea",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 5,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "51ba5f43c17a4fea",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "25579eff74a30895",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    },
+    {
+        "id": "btn_llenar_tanque",
+        "type": "ui-button",
+        "z": "34f36098cec742a6",
+        "group": "2d14b8bbc6b01e77",
+        "name": "Llenar Tanque",
+        "label": "Llenar Tanque",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "Rellena gradualmente el tanque",
+        "color": "",
+        "bgcolor": "#8bc34a",
+        "className": "",
+        "icon": "",
+        "iconPosition": "right",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "equipo1/jarabe/tambo_01/action/llenar_tanque",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 180,
+        "y": 310,
+        "wires": [
+            [
+                "5b0138b27fc98ed7"
+            ]
+        ]
+    }
+]
