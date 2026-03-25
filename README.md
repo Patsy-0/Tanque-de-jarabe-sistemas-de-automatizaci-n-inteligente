@@ -1,6 +1,6 @@
 # 🏭 Simulación IoT: Control y Monitoreo de Contenedor de Jarabe Farmacéutico
 
-Este repositorio contiene la arquitectura, código y configuración para un sistema avanzado de IoT (Internet of Things) aplicado a un contenedor de jarabe farmacéutico. 
+Este repositorio contiene la arquitectura, código y configuración para un sistema de automatización inteligente aplicado a un contenedor de jarabe farmacéutico. 
 
 El proyecto simula el control de variables físicas, gestión de actuadores mediante **AWS Device Shadow**, registro de métricas en **DynamoDB**, alertas por **SNS**, y telemetría visualizada en un Dashboard de **Node-RED**, usando una **ESP32 simulada en Wokwi** como el borde (Edge).
 
