@@ -28,6 +28,12 @@ El sistema maneja eventos divididos en dos categorías, cumpliendo con la regla 
 | **EV2** | **Temperatura BAJA** | Shadow (Control) | Moderada | Temp < 20°C | `desired` calentamiento: ON. | DynamoDB: Sí |
 | **EV3** | **Sobrellenado** | Shadow (Control) | Moderada | Volumen > 85% | `desired` válvula_salida: ON (Drenaje). | DynamoDB: Sí |
 | **EV4** | **Volumen Bajo**| Físico | Baja | Volumen < 20% | Publica en topic de emergencia / Buzzer ON. | DynamoDB: Sí / SNS: Email |
-| **EV5** | **Concentración Anómala** | Shadow (Control) | Moderada | Brix < 64 o > 67 | `desired` Alerta, Apagar aspas, cambia LED. | DynamoDB: Sí |
+| **EV5** | **Concentración Anómala** | Shadow (Control) | Moderada | Brix < 64 o > 67 | `desired` Alerta, cambia LED. | DynamoDB: Sí |
+
+
+
+Notas adicionales respecto a la tabla: 
+1. Las aspas siempre van a estar encendidas ya que a través de la potencia requerida de las aspas al mezclar se obtiene un estimado de la concentración, la cuál alertará al personal para hacer los cambios necesarios
+2. Los grados Brix son una unidad de cantidad (símbolo °Bx) y sirven para determinar el cociente total de materia seca (generalmente azúcares) disuelta en un líquido. Una solución de 25 °Bx contiene 25 g de sólido disuelto por 100 g de disolución total. (fuentes- wikipedia)
 
 
