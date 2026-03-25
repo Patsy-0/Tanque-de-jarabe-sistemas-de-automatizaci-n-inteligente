@@ -37,3 +37,4 @@ Notas adicionales respecto a la tabla:
 2. Los grados Brix son una unidad de cantidad (símbolo °Bx) y sirven para determinar el cociente total de materia seca (generalmente azúcares) disuelta en un líquido. Una solución de 25 °Bx contiene 25 g de sólido disuelto por 100 g de disolución total. (fuentes- wikipedia)
 
 
+![Diagrama de Arquitectura del Sistema](Arqui.png)
