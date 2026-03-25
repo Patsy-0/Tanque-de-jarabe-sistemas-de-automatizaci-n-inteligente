@@ -22,10 +22,12 @@ El proyecto simula el control de variables físicas, gestión de actuadores medi
 
 El sistema maneja eventos divididos en dos categorías, cumpliendo con la regla de desduplicación (dedupe) para no generar spam: solo se dispara la acción y el registro cuando el estado cambia (ej. de `OK` a `ALERTA`).
 
-| ID | Nombre del Evento | Tipo de Evento | Condición de Disparo | Acción del Sistema (Shadow / Emergencia) | Registro (DynamoDB / SNS) |
+| ID | Nombre del Evento | Tipo de Evento | Severidad | Condición de Disparo | Acción del Sistema (Shadow / Emergencia) | Registro (DynamoDB / SNS) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **EV1** | **Temperatura ALTA** | Shadow (Control) | Temp > 25°C | `desired` enfriamiento: ON. | DynamoDB: Sí |
-| **EV2** | **Temperatura BAJA** | Shadow (Control) | Temp < 20°C | `desired` calentamiento: ON. | DynamoDB: Sí |
-| **EV3** | **Sobrellenado** | Shadow (Control) | Volumen > 85% | `desired` válvula_salida: ON (Drenaje). | DynamoDB: Sí |
-| **EV4** | **Concentración Anómala** | Shadow (Control) | Brix < 64 o > 67 | `desired` Alerta, Apagar aspas, cambia LED. | DynamoDB: Sí |
-| **EV5** | **Fuga Crítica (Volumen Bajo)**| Emergencia Inmediata| Volumen < 20% | Publica en topic de emergencia / Buzzer ON. | DynamoDB: Sí / SNS: Email |
+| **EV1** | **Temperatura ALTA** | Shadow (Control) | Grave | Temp > 25°C | `desired` enfriamiento: ON. | DynamoDB: Sí |
+| **EV2** | **Temperatura BAJA** | Shadow (Control) | Moderada | Temp < 20°C | `desired` calentamiento: ON. | DynamoDB: Sí |
+| **EV3** | **Sobrellenado** | Shadow (Control) | Moderada | Volumen > 85% | `desired` válvula_salida: ON (Drenaje). | DynamoDB: Sí |
+| **EV4** | **Volumen Bajo**| Físico | Baja | Volumen < 20% | Publica en topic de emergencia / Buzzer ON. | DynamoDB: Sí / SNS: Email |
+| **EV5** | **Concentración Anómala** | Shadow (Control) | Moderada | Brix < 64 o > 67 | `desired` Alerta, Apagar aspas, cambia LED. | DynamoDB: Sí |
+
+
